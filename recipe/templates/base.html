@@ -1,14 +1,26 @@
+
 {% load static %}
+
 <html>
     <head>
         <title> Recipe Box</title>
 
     </head>
     <body>
-        <div>
-            <h1><a href="/">Recipe Box</a></h1>
+    <div >
+        <h1>
+            <a href="/">Recipe Box</a>
+        </h1>
+    </div>
+
+    <div>
+        <button><a href="/recipeadd/">Add Recipe</a></button>
+        <button><a href="/authoradd/">Add Author</a></button>
+
         </div>
-            {% block content %}
-            {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
     </body>
 </html>
