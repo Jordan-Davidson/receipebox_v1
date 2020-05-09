@@ -2,7 +2,7 @@
 
 {% block content %}
 <div>
-    <h3>{{ recipe.title }} | by
+    <h3>{{ recipe.title }} | by </h3>
     <a href="{% url 'author' pk=recipe.pk %}">{{ recipe.author.name }}</a>}</h3>
     <p>{{ recipe.description }}</p>
     <p><bold>Time Required:</bold> {{ recipe.time }}</p>

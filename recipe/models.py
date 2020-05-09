@@ -1,25 +1,11 @@
 from django.db import models
-
-# Create your models here.
-"""
-Author model:
-
-Name (CharField)
-Bio (TextField)
-
-Recipe Model:
-
-Title (CharField)
-Author link -(ForeignKey)
-Description (TextField)
-Time Required (Charfield) (for example, "One hour")
-Instructions (TextField)
-"""
+from django.contrib.auth.models import User
 
 
 class Author(models.Model):
     name = models.CharField(max_length=50)
     bio = models.TextField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
