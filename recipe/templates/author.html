@@ -8,9 +8,13 @@
     <ul>
         {% for recipe in recipes%}
 
-                <li><a href="{% url 'recipe_detail' pk=recipe.pk %}"> {{ recipe.title }}</a> </li>
+                <li><a href="/recipe/{{recipe.id}}"> {{ recipe.title }}</a> </li>
 
         {% endfor %}
     </ul>
 </div>
+{% if recipe.author.user == request.username%}
+    <a href = '/favorites/{{author.id}}/'>see your favorites!</a>
+{%else%}
+{%endif%}
 {% endblock %}

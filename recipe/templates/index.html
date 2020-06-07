@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
-
 {% block content %}
     <ul>
         {% for recipe in recipes %}
-
+        {{recipe.favorites}}
         <li>
             <a href="{% url 'recipe_detail' pk=recipe.pk %}"><h3>{{ recipe }}</h3></a>
         </li>

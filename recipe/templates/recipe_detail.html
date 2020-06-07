@@ -3,9 +3,17 @@
 {% block content %}
 <div>
     <h3>{{ recipe.title }} | by
-    <a href="{% url 'author' pk=recipe.pk %}">{{ recipe.author.name }}</a>}</h3>
+    <a href="/author/{{recipe.author.id}}/">{{ recipe.author.name }}</a></h3>
     <p>{{ recipe.description }}</p>
     <p><bold>Time Required:</bold> {{ recipe.time }}</p>
     <p><strong>Instructions:</strong> {{ recipe.instruction }}</p>
 </div>
+{% if recipe.author.user == request.user%}
+    <a href='/edit/{{recipe.id}}'>Edit your recipe!</a>
+{%endif%}
+
+{%if request.user%}
+<a href='/favorite/{{recipe.id}}'>favorite this recipe!</a>
+{%endif%}
+
 {% endblock %}
